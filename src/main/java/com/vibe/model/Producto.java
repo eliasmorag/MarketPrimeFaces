@@ -35,12 +35,53 @@ public class Producto implements Serializable {
           private String nombre;
 
           @Column(name="descripcion")
-          private String desctipcion;
+          private String descripcion;
           
           @Column(name="precio")
           private Integer precio;
           
           @Column(name="cantidad")
           private Integer cantidad;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        public String getDescripcion() {
+            return descripcion;
+        }
+
+        public void setDescripcion(String desctipcion) {
+            this.descripcion = desctipcion;
+        }
+
+        public Integer getPrecio() {
+            return precio;
+        }
+
+        public void setPrecio(Integer precio) {
+            this.precio = precio;
+        }
+
+        public Integer getCantidad() {
+            return cantidad;
+        }
+
+        public void setCantidad(Integer cantidad) {
+            this.cantidad = cantidad;
+        }
+
           
 }
