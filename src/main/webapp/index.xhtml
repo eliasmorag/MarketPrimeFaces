@@ -8,8 +8,11 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:inputText value="#{clienteController.cliente.nombre}"/>
-            <p:commandButton value="Registrar" actionListener="#{clienteController.registrar()}"/>
+            <h:panelGrid columns="3">
+                <p:link value="Producto" outcome="producto"/>
+                <p:link value="Cliente" outcome="cliente"/>
+                <p:link value="Proveedor" outcome="proveedor"/>
+            </h:panelGrid>
         </h:form>
     </h:body>
 </html>
