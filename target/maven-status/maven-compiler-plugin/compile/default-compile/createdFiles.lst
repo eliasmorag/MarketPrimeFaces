@@ -1,0 +1,14 @@
+com/vibe/model/Usuario.class
+com/vibe/ejb/CategoriaFacadeLocal.class
+com/vibe/model/Telefono_.class
+com/vibe/model/Persona_.class
+com/vibe/model/Usuario_.class
+com/vibe/controller/CategoriaController.class
+com/vibe/model/Categoria_.class
+com/vibe/model/Nota_.class
+com/vibe/model/Telefono.class
+com/vibe/ejb/CategoriaFacade.class
+com/vibe/ejb/AbstractFacade.class
+com/vibe/model/Categoria.class
+com/vibe/model/Persona.class
+com/vibe/model/Nota.class
