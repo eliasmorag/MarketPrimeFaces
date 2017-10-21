@@ -8,11 +8,8 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:inputText value="#{productoController.producto.nombre}"/>
-            <p:inputText value="#{productoController.producto.descripcion}"/>
-            <p:inputText value="#{productoController.producto.precio}"/>
-            <p:inputText value="#{productoController.producto.cantidad}"/>
-            <p:commandButton value="Registrar" actionListener="#{productoController.registrar()}"/>
+            <p:inputText value="#{clienteController.cliente.nombre}"/>
+            <p:commandButton value="Registrar" actionListener="#{clienteController.registrar()}"/>
         </h:form>
     </h:body>
 </html>

@@ -1,4 +1,4 @@
-com/vibe/model/Usuario.class
+com/vibe/controller/ClienteController.class
 com/vibe/controller/ProductoController.class
 com/vibe/ejb/CategoriaFacadeLocal.class
 com/vibe/ejb/ProductoFacadeLocal.class
@@ -6,9 +6,12 @@ com/vibe/model/Telefono_.class
 com/vibe/model/Persona_.class
 com/vibe/ejb/ProductoFacade.class
 com/vibe/model/Producto.class
+com/vibe/model/Cliente.class
+com/vibe/model/Cliente_.class
 com/vibe/model/Producto_.class
-com/vibe/model/Usuario_.class
+com/vibe/ejb/ClienteFacade.class
 com/vibe/controller/CategoriaController.class
+com/vibe/ejb/ClienteFacadeLocal.class
 com/vibe/model/Nota_.class
 com/vibe/model/Categoria_.class
 com/vibe/model/Telefono.class
