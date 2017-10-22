@@ -8,6 +8,7 @@ package com.vibe.controller;
 import com.vibe.ejb.ProveedorFacadeLocal;
 import com.vibe.model.Proveedor;
 import java.io.Serializable;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -25,7 +26,9 @@ public class ProveedorController implements Serializable {
     @EJB
     private ProveedorFacadeLocal proveedorEJB;
     private Proveedor proveedor;
-
+    private List<Proveedor> proveedores;
+    
+    
     public Proveedor getProveedor() {
         return proveedor;
     }
@@ -33,10 +36,21 @@ public class ProveedorController implements Serializable {
     public void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;
     }
+
+    public List<Proveedor> getProveedores() {
+        return proveedores;
+    }
+
+    public void setProveedores(List<Proveedor> proveedores) {
+        this.proveedores = proveedores;
+    }
+    
+    
     
     @PostConstruct
     public void init(){
         proveedor = new Proveedor();
+        proveedores = proveedorEJB.findAll();
     }
     
     public void registrar(){
