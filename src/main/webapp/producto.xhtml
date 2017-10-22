@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:body>
 
@@ -34,6 +35,15 @@
                     <br/>
                     <p:fieldset legend="Listado de productos">
                         <p:dataTable var="productos" id="display" value="#{productoController.productos}" filteredValue="#{productoController.productosfiltered}">
+                             <f:facet name="header">
+                                 <h:commandLink >
+                                     <p:graphicImage library="images" name="excel.ico" width="48" alt="aca" />
+                                    <p:dataExporter type="xls" target="display" fileName="productos" />
+                                </h:commandLink>
+                            </f:facet>
+                            <p:column headerText="Id" filterBy="#{productos.id}" filterMatchMode="contains">
+                            <h:outputText value="#{productos.id}"/>
+                            </p:column>
                             <p:column headerText="Nombre" filterBy="#{productos.nombre}" filterMatchMode="contains">
                                 <h:outputText value="#{productos.nombre}"/>
                             </p:column>
