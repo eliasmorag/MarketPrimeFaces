@@ -57,6 +57,7 @@ public class ProveedorController implements Serializable {
         try{
             proveedorEJB.create(proveedor);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Registro exitoso"));
+            proveedores = proveedorEJB.findAll();
         }catch(Exception e){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error!"));
         }

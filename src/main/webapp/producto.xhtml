@@ -31,13 +31,13 @@ and open the template in the editor.
                     <p:outputLabel value="Cantidad" />
                     <p:inputText value="#{productoController.producto.cantidad}"/>
                 </h:panelGrid>
-                <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje" actionListener="#{productoController.registrar()}"/>
+                <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje,display" actionListener="#{productoController.registrar()}"/>
             </p:fieldset>
         </h:form>
         <br/>
         <p:separator/>
         <br/>
-        <p:fieldset legend="Listado de productos">
+        <p:fieldset id="display" legend="Listado de productos">
             <p:dataTable var="productos" value="#{productoController.productos}">
                 <p:column headerText="Nombre">
                     <h:outputText value="#{productos.nombre}"/>
