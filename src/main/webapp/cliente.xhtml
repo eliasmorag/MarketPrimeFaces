@@ -21,17 +21,17 @@
                         <p:commandButton icon="ui-icon-check" value="Registrar" update="display,mensaje" actionListener="#{clienteController.registrar()}"/>
 
                     </p:fieldset>
-                </h:form>
                 <br/>
                 <p:separator/>
                 <br/>
-                <p:fieldset id="display" legend="Listado de Clientes">
-                    <p:dataTable var="clientes" value="#{clienteController.clientes}">
-                        <p:column headerText="Nombre">
+                <p:fieldset  legend="Listado de Clientes">
+                    <p:dataTable id="display" var="clientes" value="#{clienteController.clientes}" filteredValue="#{clienteController.clientesfiltered}" >
+                        <p:column headerText="Nombre" filterBy="#{clientes.nombre}" filterMatchMode="contains">
                             <h:outputText value="#{clientes.nombre}"/>
                         </p:column>
                     </p:dataTable>
                 </p:fieldset>
+                </h:form>
             </ui:define>
 
         </ui:composition>

@@ -27,7 +27,7 @@ public class ProveedorController implements Serializable {
     private ProveedorFacadeLocal proveedorEJB;
     private Proveedor proveedor;
     private List<Proveedor> proveedores;
-    
+    private List<Proveedor> proveedoresfiltered;
     
     public Proveedor getProveedor() {
         return proveedor;
@@ -43,6 +43,14 @@ public class ProveedorController implements Serializable {
 
     public void setProveedores(List<Proveedor> proveedores) {
         this.proveedores = proveedores;
+    }
+
+    public List<Proveedor> getProveedoresfiltered() {
+        return proveedoresfiltered;
+    }
+
+    public void setProveedoresfiltered(List<Proveedor> proveedoresfiltered) {
+        this.proveedoresfiltered = proveedoresfiltered;
     }
     
     

@@ -29,27 +29,26 @@
                         </h:panelGrid>
                         <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje,display" actionListener="#{productoController.registrar()}"/>
                     </p:fieldset>
+                    <br/>
+                    <p:separator/>
+                    <br/>
+                    <p:fieldset legend="Listado de productos">
+                        <p:dataTable var="productos" id="display" value="#{productoController.productos}" filteredValue="#{productoController.productosfiltered}">
+                            <p:column headerText="Nombre" filterBy="#{productos.nombre}" filterMatchMode="contains">
+                                <h:outputText value="#{productos.nombre}"/>
+                            </p:column>
+                            <p:column headerText="Descripcion" filterBy="#{productos.descripcion}" filterMatchMode="contains">
+                                <h:outputText value="#{productos.descripcion}"/>
+                            </p:column>
+                            <p:column headerText="Precio" filterBy="#{productos.precio}" filterMatchMode="contains">
+                                <h:outputText value="#{productos.precio}" />
+                            </p:column>
+                            <p:column headerText="Cantidad" filterBy="#{productos.cantidad}" filterMatchMode="contains">
+                                <h:outputText value="#{productos.cantidad}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </p:fieldset>
                 </h:form>
-                <br/>
-                <p:separator/>
-                <br/>
-                <p:fieldset id="display" legend="Listado de productos">
-                    <p:dataTable var="productos" value="#{productoController.productos}">
-                        <p:column headerText="Nombre">
-                            <h:outputText value="#{productos.nombre}"/>
-                        </p:column>
-                        <p:column headerText="Descripcion">
-                            <h:outputText value="#{productos.descripcion}"/>
-                        </p:column>
-                        <p:column headerText="Precio">
-                            <h:outputText value="#{productos.precio}" />
-                        </p:column>
-                        <p:column headerText="Cantidad">
-                            <h:outputText value="#{productos.cantidad}"/>
-                        </p:column>
-                    </p:dataTable>
-                </p:fieldset>
-            
             </ui:define>
 
         </ui:composition>

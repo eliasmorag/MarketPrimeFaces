@@ -22,6 +22,7 @@ public class ClienteController implements Serializable {
      private ClienteFacadeLocal clienteEJB;
      private Cliente cliente;
      private List<Cliente> clientes;
+     private List<Cliente> clientesfiltered;
 
     public Cliente getCliente() {
         return cliente;
@@ -37,6 +38,14 @@ public class ClienteController implements Serializable {
 
     public void setClientes(List<Cliente> clientes) {
         this.clientes = clientes;
+    }
+
+    public List<Cliente> getClientesfiltered() {
+        return clientesfiltered;
+    }
+
+    public void setClientesfiltered(List<Cliente> clientesfiltered) {
+        this.clientesfiltered = clientesfiltered;
     }
     
     

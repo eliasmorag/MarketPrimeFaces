@@ -21,6 +21,7 @@ public class ProductoController implements Serializable {
      private ProductoFacadeLocal productoEJB;
      private Producto producto;
      private List<Producto> productos;
+     private List<Producto> productosfiltered;
      
 
     public Producto getProducto() {
@@ -38,7 +39,14 @@ public class ProductoController implements Serializable {
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
     }
-    
+
+    public List<Producto> getProductosfiltered() {
+        return productosfiltered;
+    }
+
+    public void setProductosfiltered(List<Producto> productosfiltered) {
+        this.productosfiltered = productosfiltered;
+    }
     
     
     @PostConstruct
