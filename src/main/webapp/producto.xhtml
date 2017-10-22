@@ -1,57 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 
-
-    <h:head>
-        <title>PRODUCTO</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </h:head>>
     <h:body>
-        <h:form>
-            <p:growl id="mensaje" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true" />
-            <p:fieldset legend="Nuevo Producto">
-                <h:panelGrid columns="2">
-                    <p:outputLabel value="Nombre" />
-                    <p:inputText value="#{productoController.producto.nombre}"/>
 
-                    <p:outputLabel value="Descripcion" />
-                    <p:inputText value="#{productoController.producto.descripcion}"/>
+        <ui:composition template="./WEB-INF/templates/plantilla.xhtml">
 
-                    <p:outputLabel value="Precio" />
-                    <p:inputText value="#{productoController.producto.precio}"/>
+            <ui:define name="content">
+                <br/>
+                <h:form>
+                    <p:growl id="mensaje" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true" />
+                    <p:fieldset legend="Nuevo Producto">
+                        <h:panelGrid columns="2">
+                            <p:outputLabel value="Nombre" />
+                            <p:inputText value="#{productoController.producto.nombre}"/>
 
-                    <p:outputLabel value="Cantidad" />
-                    <p:inputText value="#{productoController.producto.cantidad}"/>
-                </h:panelGrid>
-                <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje,display" actionListener="#{productoController.registrar()}"/>
-            </p:fieldset>
-        </h:form>
-        <br/>
-        <p:separator/>
-        <br/>
-        <p:fieldset id="display" legend="Listado de productos">
-            <p:dataTable var="productos" value="#{productoController.productos}">
-                <p:column headerText="Nombre">
-                    <h:outputText value="#{productos.nombre}"/>
-                </p:column>
-                <p:column headerText="Descripcion">
-                    <h:outputText value="#{productos.descripcion}"/>
-                </p:column>
-                <p:column headerText="Precio">
-                    <h:outputText value="#{productos.precio}" />
-                </p:column>
-                <p:column headerText="Cantidad">
-                    <h:outputText value="#{productos.cantidad}"/>
-                </p:column>
-            </p:dataTable>
-        </p:fieldset>
-    </h:body>>
+                            <p:outputLabel value="Descripcion" />
+                            <p:inputText value="#{productoController.producto.descripcion}"/>
+
+                            <p:outputLabel value="Precio" />
+                            <p:inputText value="#{productoController.producto.precio}"/>
+
+                            <p:outputLabel value="Cantidad" />
+                            <p:inputText value="#{productoController.producto.cantidad}"/>
+                        </h:panelGrid>
+                        <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje,display" actionListener="#{productoController.registrar()}"/>
+                    </p:fieldset>
+                </h:form>
+                <br/>
+                <p:separator/>
+                <br/>
+                <p:fieldset id="display" legend="Listado de productos">
+                    <p:dataTable var="productos" value="#{productoController.productos}">
+                        <p:column headerText="Nombre">
+                            <h:outputText value="#{productos.nombre}"/>
+                        </p:column>
+                        <p:column headerText="Descripcion">
+                            <h:outputText value="#{productos.descripcion}"/>
+                        </p:column>
+                        <p:column headerText="Precio">
+                            <h:outputText value="#{productos.precio}" />
+                        </p:column>
+                        <p:column headerText="Cantidad">
+                            <h:outputText value="#{productos.cantidad}"/>
+                        </p:column>
+                    </p:dataTable>
+                </p:fieldset>
+            
+            </ui:define>
+
+        </ui:composition>
+
+    </h:body>
 </html>
