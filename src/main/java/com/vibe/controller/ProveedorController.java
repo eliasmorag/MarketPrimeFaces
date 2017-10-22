@@ -10,6 +10,8 @@ import com.vibe.model.Proveedor;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -40,8 +42,9 @@ public class ProveedorController implements Serializable {
     public void registrar(){
         try{
             proveedorEJB.create(proveedor);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Registro exitoso"));
         }catch(Exception e){
-            //mensaje prime grwol
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error!"));
         }
     }
 }

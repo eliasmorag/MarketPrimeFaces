@@ -16,6 +16,7 @@ and open the template in the editor.
     </h:head>>
     <h:body>
         <h:form>
+            <p:growl id="mensaje" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true" />
             <p:fieldset legend="Datos del producto">
                 <h:panelGrid columns="2">
                     <p:outputLabel value="Nombre" />
@@ -30,7 +31,7 @@ and open the template in the editor.
                     <p:outputLabel value="Cantidad" />
                     <p:inputText value="#{productoController.producto.cantidad}"/>
                 </h:panelGrid>
-                <p:commandButton value="Registrar" actionListener="#{productoController.registrar()}"/>
+                <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje" actionListener="#{productoController.registrar()}"/>
                 
             </p:fieldset>
         </h:form>
