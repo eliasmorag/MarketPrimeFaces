@@ -26,8 +26,8 @@
                                 <f:selectItem itemLabel="Select One" itemValue="" />
                                 <f:selectItems value="#{ventaController.clientes}" var="cat" itemLabel="#{cat.nombre}" itemValue="#{cat.id}" />
                             </p:selectOneMenu>
-                            <p:outputLabel value="Cantidad" />
-                            <p:inputText value="#{ventaController.cantidad}"/>
+                            <p:outputLabel for="cantidad" value="Cantidad" />
+                            <p:spinner id="cantidad" value="#{ventaController.cantidad}" min="1" max="100"/>
                             <p:outputLabel value="Total" />
                             <p:inputText value="#{ventaController.total}"/>
                             <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje" actionListener="#{ventaController.registrar()}" />
