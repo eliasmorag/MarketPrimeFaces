@@ -128,7 +128,6 @@ public class VentaController implements Serializable {
             venta.setProducto(producto);
             venta.setCliente(cliente);
             venta.setTotal(total);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Venta exitosa"));
             ventaEJB.create(this.venta);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Venta exitosa"));
         }catch(Exception e){
