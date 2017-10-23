@@ -41,19 +41,19 @@
                                     <p:dataExporter type="xls" target="display" fileName="productos" />
                                 </h:commandLink>
                             </f:facet>
-                            <p:column headerText="Id" filterBy="#{productos.id}" filterMatchMode="contains">
+                            <p:column headerText="Id" filterBy="#{productos.id}" filterMatchMode="contains" sortBy="#{productos.id}">
                             <h:outputText value="#{productos.id}"/>
                             </p:column>
-                            <p:column headerText="Nombre" filterBy="#{productos.nombre}" filterMatchMode="contains">
+                            <p:column headerText="Nombre" filterBy="#{productos.nombre}" filterMatchMode="contains" sortBy="#{productos.nombre}">
                                 <h:outputText value="#{productos.nombre}"/>
                             </p:column>
-                            <p:column headerText="Descripcion" filterBy="#{productos.descripcion}" filterMatchMode="contains">
+                            <p:column headerText="Descripcion" filterBy="#{productos.descripcion}" filterMatchMode="contains" sortBy="#{productos.descripcion}">
                                 <h:outputText value="#{productos.descripcion}"/>
                             </p:column>
-                            <p:column headerText="Precio" filterBy="#{productos.precio}" filterMatchMode="contains">
+                            <p:column headerText="Precio" filterBy="#{productos.precio}" filterMatchMode="contains" sortBy="#{productos.precio}">
                                 <h:outputText value="#{productos.precio}" />
                             </p:column>
-                            <p:column headerText="Cantidad" filterBy="#{productos.cantidad}" filterMatchMode="contains">
+                            <p:column headerText="Cantidad" filterBy="#{productos.cantidad}" filterMatchMode="contains" sortBy="#{productos.cantidad}">
                                 <h:outputText value="#{productos.cantidad}"/>
                             </p:column>
                         </p:dataTable>
