@@ -154,6 +154,7 @@ public class CompraController implements Serializable {
         producto= new Producto();
         productos = this.productoEJB.findAll();
         proveedores = this.proveedorEJB.findAll();
+        compras = this.compraEJB.findAll();
     }
     
     public void registrar(){

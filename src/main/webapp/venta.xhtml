@@ -31,7 +31,7 @@
                                 <p:outputLabel value="Total" />
                                 <p:inputText value="#{ventaController.total}"/>
                             </h:panelGrid>
-                            <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje" actionListener="#{ventaController.registrar()}" />
+                            <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje,display" actionListener="#{ventaController.registrar()}" />
                         </p:fieldset>
                         <br/>
                     <p:separator/>
