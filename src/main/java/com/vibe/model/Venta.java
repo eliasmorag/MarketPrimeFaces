@@ -29,6 +29,9 @@ import javax.persistence.Table;
         @JoinColumn(name="producto", nullable=false)
         private  Producto producto;
     
+        @Column(name="cantidad")
+        private Integer cantidad;
+        
         @Column(name="total")
         private Integer total;
 
@@ -39,6 +42,14 @@ import javax.persistence.Table;
             this.cliente = cliente;
             this.producto = producto;
             this.total = total;
+        }
+
+        public Integer getCantidad() {
+            return cantidad;
+        }
+
+        public void setCantidad(Integer cantidad) {
+            this.cantidad = cantidad;
         }
         
         public int getCodigo() {

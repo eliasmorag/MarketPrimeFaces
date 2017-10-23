@@ -44,6 +44,15 @@ public class VentaController implements Serializable {
     private Integer total;
     private Integer cliente_id;
     private Integer producto_id;
+    private Integer cantidad;
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
 
     public Integer getCliente_id() {
         return cliente_id;
@@ -128,6 +137,8 @@ public class VentaController implements Serializable {
             venta.setProducto(producto);
             venta.setCliente(cliente);
             venta.setTotal(total);
+            venta.setCantidad(cantidad);
+            /////////////////////////////////////////////////
             ventaEJB.create(this.venta);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Venta exitosa"));
         }catch(Exception e){
