@@ -31,6 +31,34 @@
                             </h:panelGrid>
                             <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje" actionListener="#{compraController.registrar()}" />
                         </p:fieldset>
+                        <br/>
+                        <p:separator/>
+                        <br/>
+                        <p:fieldset legend="Historial de compras">
+                            <p:dataTable var="compras" id="display" value="#{comprasController.compras}" filteredValue="#{ventaController.comprasfiltered}">
+                                 <f:facet name="header">
+                                     <h:commandLink >
+                                         <p:graphicImage library="images" name="excel.ico" width="48" alt="aca" />
+                                        <p:dataExporter type="xls" target="display" fileName="productos" />
+                                    </h:commandLink>
+                                </f:facet>
+                                <p:column headerText="Id" filterBy="#{compras.codigo}" filterMatchMode="contains" sortBy="#{compras.codigo}">
+                                    <h:outputText value="#{compras.codigo}"/>
+                                </p:column>
+                                <p:column headerText="Producto" filterBy="#{compras.producto.nombre}" filterMatchMode="contains" sortBy="#{compras.producto.nombre}">
+                                      <h:outputText value="#{compras.producto.nombre}"/>
+                                </p:column>
+                                <p:column headerText="Cliente" filterBy="#{compras.proveedor.nombre}" filterMatchMode="contains" sortBy="#{compras.proveedor.nombre}">
+                                      <h:outputText value="#{compras.proveedor.nombre}"/>
+                                </p:column>
+                                <p:column headerText="Cantidad" filterBy="#{compras.cantidad}" filterMatchMode="contains" sortBy="#{compras.cantidad}">
+                                      <h:outputText value="#{compras.cantidad}"/>
+                                </p:column>
+                                <p:column headerText="Total" filterBy="#{compras.total}" filterMatchMode="contains" sortBy="#{compras.total}">
+                                      <h:outputText value="#{compras.total}"/>
+                                </p:column>
+                            </p:dataTable>
+                        </p:fieldset>
                 </h:form>
 
             </ui:define>

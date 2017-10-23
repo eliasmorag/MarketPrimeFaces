@@ -36,6 +36,7 @@ public class CompraController implements Serializable {
     private ProductoFacadeLocal productoEJB;
     
     private Compra compra;
+    private List<Compra> compras;
     private Proveedor proveedor;
     private Producto producto;
     private List<Producto> productos;
@@ -45,6 +46,8 @@ public class CompraController implements Serializable {
     private Integer cantidad;
     private Integer cantidad_comprada;
     private Integer cantidad_stock;
+    private List<Compra> comprasfiltered;
+    
 
     public Compra getCompra() {
         return compra;
@@ -54,6 +57,24 @@ public class CompraController implements Serializable {
         this.compra = compra;
     }
 
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
+
+    public List<Compra> getComprasfiltered() {
+        return comprasfiltered;
+    }
+
+    public void setComprasfiltered(List<Compra> comprasfiltered) {
+        this.comprasfiltered = comprasfiltered;
+    }
+    
+    
+    
     public Proveedor getProveedor() {
         return proveedor;
     }
@@ -151,6 +172,7 @@ public class CompraController implements Serializable {
             compraEJB.create(this.compra);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Compra exitosa"));
             /////////////////////////////////////////////////    
+            compras = this.compraEJB.findAll();
         }catch(Exception e){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error abortar mision! llamar al chapulin"));
         }

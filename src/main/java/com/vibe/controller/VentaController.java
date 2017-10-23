@@ -37,6 +37,7 @@ public class VentaController implements Serializable {
     @EJB
     private ProductoFacadeLocal productoEJB;
     private Venta venta;
+    private List<Venta> ventas;
     private Cliente cliente;
     private Producto producto;
     private List<Producto> productos;
@@ -47,6 +48,7 @@ public class VentaController implements Serializable {
     private Integer cantidad;
     private Integer cantidad_vendida;
     private Integer cantidad_stock;
+    private List<Venta> ventasfiltered;
     
     public Integer getCantidad() {
         return cantidad;
@@ -55,6 +57,24 @@ public class VentaController implements Serializable {
     public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
+
+    public List<Venta> getVentas() {
+        return ventas;
+    }
+
+    public void setVentas(List<Venta> ventas) {
+        this.ventas = ventas;
+    }
+
+    public List<Venta> getVentasfiltered() {
+        return ventasfiltered;
+    }
+
+    public void setVentasfiltered(List<Venta> ventasfiltered) {
+        this.ventasfiltered = ventasfiltered;
+    }
+    
+    
 
     public Integer getCliente_id() {
         return cliente_id;
@@ -130,6 +150,7 @@ public class VentaController implements Serializable {
         producto= new Producto();
         productos = this.productoEJB.findAll();
         clientes = this.clienteEJB.findAll();
+        ventas = this.ventaEJB.findAll();
     }
     
     public void registrar(){
@@ -150,6 +171,7 @@ public class VentaController implements Serializable {
                 productoEJB.edit(producto);
                 ventaEJB.create(this.venta);
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Venta exitosa"));
+                ventas = this.ventaEJB.findAll();
 
             }
             else{
