@@ -22,11 +22,11 @@ import javax.persistence.Table;
         private int codigo;
     
         @OneToOne
-        @JoinColumn(name="codigo_cliente", nullable=false)
+        @JoinColumn(name="cliente", nullable=false)
         private Cliente cliente;
         
         @OneToOne
-        @JoinColumn(name="codigo_producto", nullable=false)
+        @JoinColumn(name="producto", nullable=false)
         private  Producto producto;
     
         @Column(name="total")

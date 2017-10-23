@@ -42,7 +42,26 @@ public class VentaController implements Serializable {
     private List<Producto> productos;
     private List<Cliente> clientes;
     private Integer total;
+    private Integer cliente_id;
+    private Integer producto_id;
 
+    public Integer getCliente_id() {
+        return cliente_id;
+    }
+
+    public void setCliente_id(Integer cliente_id) {
+        this.cliente_id = cliente_id;
+    }
+
+    public Integer getProducto_id() {
+        return producto_id;
+    }
+
+    public void setProducto_id(Integer producto_id) {
+        this.producto_id = producto_id;
+    }
+
+    
     public Integer getTotal() {
         return total;
     }
@@ -104,7 +123,13 @@ public class VentaController implements Serializable {
     
     public void registrar(){
         try{
-            ventaEJB.create(venta);
+            producto=productoEJB.find(this.producto_id);
+            cliente=clienteEJB.find(this.cliente_id);
+            venta.setProducto(producto);
+            venta.setCliente(cliente);
+            venta.setTotal(total);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Venta exitosa"));
+            ventaEJB.create(this.venta);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Venta exitosa"));
         }catch(Exception e){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error abortar mision! llamar al chapulin"));
