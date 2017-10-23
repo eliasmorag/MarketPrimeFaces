@@ -14,26 +14,25 @@
                 <br/>
                 <h:form>
                     <p:growl id="mensaje" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true" />
-                    <h:panelGrid>
-                        <p:fieldset legend="Nueva venta">
-                            <p:outputLabel for="pro" value="Productos" />
-                            <p:selectOneMenu id="pro" value="#{ventaController.producto_id}">
-                                <f:selectItem itemLabel="Select One" itemValue="" />
-                                <f:selectItems value="#{ventaController.productos}" var="cat" itemLabel="#{cat.nombre}" itemValue="#{cat.id}" />
-                            </p:selectOneMenu>
-                            <p:outputLabel for="cli" value="Clientes" />
-                            <p:selectOneMenu id="cli" value="#{ventaController.cliente_id}">
-                                <f:selectItem itemLabel="Select One" itemValue="" />
-                                <f:selectItems value="#{ventaController.clientes}" var="cat" itemLabel="#{cat.nombre}" itemValue="#{cat.id}" />
-                            </p:selectOneMenu>
-                            <p:outputLabel for="cantidad" value="Cantidad" />
-                            <p:spinner id="cantidad" value="#{ventaController.cantidad}" min="1" max="100"/>
-                            <p:outputLabel value="Total" />
-                            <p:inputText value="#{ventaController.total}"/>
+                        <p:fieldset legend="Nueva Venta">
+                            <h:panelGrid columns="2">
+                                <p:outputLabel for="pro" value="Productos" />
+                                <p:selectOneMenu id="pro" value="#{ventaController.producto_id}">
+                                    <f:selectItem itemLabel="Select One" itemValue="" />
+                                    <f:selectItems value="#{ventaController.productos}" var="cat" itemLabel="#{cat.nombre}" itemValue="#{cat.id}" />
+                                </p:selectOneMenu>
+                                <p:outputLabel for="cli" value="Clientes" />
+                                <p:selectOneMenu id="cli" value="#{ventaController.cliente_id}">
+                                    <f:selectItem itemLabel="Select One" itemValue="" />
+                                    <f:selectItems value="#{ventaController.clientes}" var="cat" itemLabel="#{cat.nombre}" itemValue="#{cat.id}" />
+                                </p:selectOneMenu>
+                                <p:outputLabel for="cantidad" value="Cantidad" />
+                                <p:spinner id="cantidad" value="#{ventaController.cantidad}" min="1" max="100"/>
+                                <p:outputLabel value="Total" />
+                                <p:inputText value="#{ventaController.total}"/>
+                            </h:panelGrid>
                             <p:commandButton icon="ui-icon-check" value="Registrar" update="mensaje" actionListener="#{ventaController.registrar()}" />
-                            
                         </p:fieldset>
-                    </h:panelGrid>
                 </h:form>
 
             </ui:define>
