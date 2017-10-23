@@ -31,10 +31,10 @@
                                     <p:dataExporter type="xls" target="display" fileName="productos" />
                                 </h:commandLink>
                         </f:facet>
-                        <p:column headerText="Id" filterBy="#{proveedores.id}" filterMatchMode="contains" >
+                        <p:column headerText="Id" filterBy="#{proveedores.id}" filterMatchMode="contains" sortBy="#{proveedores.id}">
                             <h:outputText value="#{proveedores.id}"/>
                         </p:column>
-                        <p:column headerText="Nombre" filterBy="#{proveedores.nombre}" filterMatchMode="contains" >
+                        <p:column headerText="Nombre" filterBy="#{proveedores.nombre}" filterMatchMode="contains" sortBy="#{proveedores.nombre}">
                             <h:outputText value="#{proveedores.nombre}"/>
                         </p:column>
                     </p:dataTable>
