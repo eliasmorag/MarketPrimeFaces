@@ -12,8 +12,12 @@
 /home/santiago/MarketPrimeFaces/src/main/java/com/vibe/model/Nota.java
 /home/santiago/MarketPrimeFaces/src/main/java/com/vibe/controller/exceptions/NonexistentEntityException.java
 /home/santiago/MarketPrimeFaces/src/main/java/com/vibe/ejb/ProductoFacadeLocal.java
+/home/santiago/MarketPrimeFaces/src/main/java/com/vibe/model/Compra.java
 /home/santiago/MarketPrimeFaces/src/main/java/com/vibe/ejb/ProductoFacade.java
 /home/santiago/MarketPrimeFaces/src/main/java/com/vibe/ejb/ClienteFacade.java
+/home/santiago/MarketPrimeFaces/src/main/java/com/vibe/ejb/CompraFacadeLocal.java
+/home/santiago/MarketPrimeFaces/src/main/java/com/vibe/ejb/CompraFacade.java
+/home/santiago/MarketPrimeFaces/src/main/java/com/vibe/controller/CompraController.java
 /home/santiago/MarketPrimeFaces/src/main/java/com/vibe/model/Telefono.java
 /home/santiago/MarketPrimeFaces/src/main/java/com/vibe/model/Cliente.java
 /home/santiago/MarketPrimeFaces/src/main/java/com/vibe/ejb/CategoriaFacadeLocal.java

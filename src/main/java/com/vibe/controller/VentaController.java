@@ -41,11 +41,13 @@ public class VentaController implements Serializable {
     private Producto producto;
     private List<Producto> productos;
     private List<Cliente> clientes;
-    private Integer total;
+    private Integer total=100;
     private Integer cliente_id;
     private Integer producto_id;
     private Integer cantidad;
-
+    private Integer cantidad_vendida;
+    private Integer cantidad_stock;
+    
     public Integer getCantidad() {
         return cantidad;
     }
@@ -132,6 +134,7 @@ public class VentaController implements Serializable {
     
     public void registrar(){
         try{
+            
             producto=productoEJB.find(this.producto_id);
             cliente=clienteEJB.find(this.cliente_id);
             venta.setProducto(producto);
@@ -139,8 +142,19 @@ public class VentaController implements Serializable {
             venta.setTotal(total);
             venta.setCantidad(cantidad);
             /////////////////////////////////////////////////
-            ventaEJB.create(this.venta);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Venta exitosa"));
+            cantidad_vendida=venta.getCantidad();
+            cantidad_stock=producto.getCantidad();
+            if (cantidad_stock >= cantidad_vendida){
+                cantidad_stock=cantidad_stock-cantidad_vendida;
+                producto.setCantidad(cantidad_stock);
+                productoEJB.edit(producto);
+                ventaEJB.create(this.venta);
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Venta exitosa"));
+
+            }
+            else{
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "No existe stock suficiente"));
+            }         
         }catch(Exception e){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Error abortar mision! llamar al chapulin"));
         }

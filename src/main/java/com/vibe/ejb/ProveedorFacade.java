@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author eliasmorag
+ * @author santiago
  */
 @Stateless
 public class ProveedorFacade extends AbstractFacade<Proveedor> implements ProveedorFacadeLocal {

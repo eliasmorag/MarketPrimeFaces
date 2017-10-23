@@ -11,7 +11,7 @@ import javax.ejb.Local;
 
 /**
  *
- * @author eliasmorag
+ * @author santiago
  */
 @Local
 public interface ProveedorFacadeLocal {
