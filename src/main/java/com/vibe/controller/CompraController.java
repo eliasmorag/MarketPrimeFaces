@@ -143,6 +143,11 @@ public class CompraController implements Serializable {
             compra.setProducto(producto);
             compra.setProveedor(proveedor);
             compra.setCantidad(cantidad);
+            cantidad_comprada=compra.getCantidad();
+            cantidad_stock= producto.getCantidad();
+            cantidad_stock=cantidad_stock+cantidad_comprada;
+            producto.setCantidad(cantidad_stock);
+            productoEJB.edit(producto);
             compraEJB.create(this.compra);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Compra exitosa"));
             /////////////////////////////////////////////////    
